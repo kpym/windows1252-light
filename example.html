@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <head>
+    <meta charset="utf-8">
+    <meta description="Example borrowed from https://github.com/b4stien/js-csv-encoding">
+  </head>
+  <body>
+    <h1>Exemple pour <a href="https://github.com/kpym/windows1252-light">github.com/kpym/windows1252-light</a></h1>
+    <p>
+      <a href="#" id="download-csv">Cliquer ici pour télécharger un CSV compatible avec Excel</a>
+    </p>
+
+    <script type="text/javascript" src="windows1252.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js" integrity="sha512-Qlv6VSKh1gDKGoJbnyA5RMXYcvnpIqhO++MhIM2fStMcGT9i2T//tSwYFlcyoRRDcDZ+TYHpH8azBBCyhpSeqw==" crossorigin="anonymous" referrerpolicy="no-referrer"  defer></script>
+    <script type="text/javascript">
+        var csvContent = 'éà; ça; 12\nà@€; çï; 13',
+            fileName = 'for_Excel_under_Windows.csv';
+
+        var a = document.getElementById('download-csv');
+        a.addEventListener('click', function(e) {
+            // use UnicodeToWindows1252(csvContent,'') to ignore non encodable characters
+            var csvContentEncoded = UnicodeToWindows1252(csvContent);
+            var blob = new Blob([csvContentEncoded], {type: 'text/csv;charset=windows-1252;'});
+            saveAs(blob, fileName);
+            e.preventDefault();
+        });
+    </script>
+  </body>
+</html>
