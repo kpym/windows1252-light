@@ -4,10 +4,10 @@ Very small _(1.29 KB)_ javascript library to encode string to `Windows-1252`.
 
 # Usage
 
-This library can be downloaded or linked throught GitHub pages _(not recommended)_ :
+This library can be downloaded or use jsdelivr like this :
 
 ```html
-  <script src="https://kpym.github.io/windows1252-light/windows1252.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/gh/kpym/windows1252-light@v1.0.0/windows1252.js" defer></script>
 ```
 
 This library contains a single function `UnicodeToWindows1252` that ca be used like this
