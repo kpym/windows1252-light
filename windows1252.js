@@ -14,7 +14,7 @@ function UnicodeToWindows1252(str, rep) {
     r = 63; // use default '?'
   }
   var data = [];
-  for (let c of str) {
+  for (let c of str.normalize("NFC")) {
     var d = windows1252.indexOf(c);
     if (d < 0) { // missing character ?
       if (r == 0) { // ignore it ?
